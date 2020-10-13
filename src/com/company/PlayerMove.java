@@ -28,7 +28,7 @@ public class PlayerMove {
 
         String choiceOfAction = inpout.next();
         if (choiceOfAction.equals("d")){
-            if (table[positionLine][positionCol + 1] == "\uD83D\uDD35" || table[positionLine][positionCol + 1] == "\uD83D\uDD34"){
+            if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -38,7 +38,7 @@ public class PlayerMove {
         }
 
         else if (choiceOfAction.equals("q")){
-            if (table[positionLine][positionCol - 1] == "\uD83D\uDD35" || table[positionLine][positionCol - 1] == "\uD83D\uDD34"){
+            if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -48,7 +48,7 @@ public class PlayerMove {
         }
 
         else if (choiceOfAction.equals("z")){
-            if (table[positionLine - 1][positionCol] == "\uD83D\uDD35" || table[positionLine - 1][positionCol] == "\uD83D\uDD34"){
+            if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35")|| table[positionLine - 1][positionCol].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -58,7 +58,7 @@ public class PlayerMove {
         }
 
         else if (choiceOfAction.equals("s")){
-            if (table[positionLine + 1][positionCol] == "\uD83D\uDD35" || table[positionLine + 1][positionCol] == "\uD83D\uDD34"){
+            if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -97,7 +97,7 @@ public class PlayerMove {
 
         String choiceOfAction = inpout.next();
         if (choiceOfAction.equals("d")){
-            if (table[positionLine][positionCol + 1] == "\uD83D\uDD35" || table[positionLine][positionCol + 1] == "\uD83D\uDD34"){
+            if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -107,7 +107,7 @@ public class PlayerMove {
         }
 
         else if (choiceOfAction.equals("q")){
-            if (table[positionLine][positionCol - 1] == "\uD83D\uDD35" || table[positionLine][positionCol - 1] == "\uD83D\uDD34"){
+            if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -117,7 +117,7 @@ public class PlayerMove {
         }
 
         else if (choiceOfAction.equals("z")){
-            if (table[positionLine - 1][positionCol] == "\uD83D\uDD35" || table[positionLine - 1][positionCol] == "\uD83D\uDD34"){
+            if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35")|| table[positionLine - 1][positionCol].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
@@ -127,7 +127,7 @@ public class PlayerMove {
         }
 
         else if (choiceOfAction.equals("s")){
-            if (table[positionLine + 1][positionCol] == "\uD83D\uDD35" || table[positionLine + 1][positionCol] == "\uD83D\uDD34"){
+            if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34")){
                 System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
             }
             else {
