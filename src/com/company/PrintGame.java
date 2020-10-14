@@ -11,14 +11,18 @@ public class PrintGame {
         /** Affichage du plateau de jeu **/
         int line = 0;
         int column = 0;
+        System.out.println("   A    B    C    D    E    F    G    H    I    J    K");
         System.out.println("---------------------------------------------------------");
         for (line = 0; line < 10; line++) {
             System.out.print("| ");
             for (column = 0; column < 11; column++) {
-                System.out.print(table[line][column] + " | ");
+                if (column == 10){
+                    System.out.println(table[line][column] + " | " + line);
+                }
+                else {
+                    System.out.print(table[line][column] + " | ");
+                }
             }
-
-            System.out.println();
             System.out.println("---------------------------------------------------------");
         }
     }
