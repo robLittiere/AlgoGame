@@ -13,6 +13,8 @@ public class game {
             gameMenu.jumpLine(2);
 
             PlayerMove.PlayerMove(gameBoard,"\uD83D\uDD34");
+            PrintGame.printBoard(gameBoard);
+            PlayerDestroyCase.destroyCase(gameBoard);
 
             player = false;
         }
@@ -21,6 +23,8 @@ public class game {
             gameMenu.jumpLine(2);
 
             PlayerMove.PlayerMove(gameBoard,"\uD83D\uDD35");
+            PrintGame.printBoard(gameBoard);
+            PlayerDestroyCase.destroyCase(gameBoard);
 
             player = true;
         }

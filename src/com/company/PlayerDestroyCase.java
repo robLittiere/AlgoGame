@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class PlayerDestroyCase {
 
@@ -9,51 +10,69 @@ public class PlayerDestroyCase {
         System.out.println("Maintenant choisit une case à détruire ");
         System.out.println("Tu dois d'abord choisir une lettre de 'a' à 'k' qui sera la colonne ");
         Scanner userinput = new Scanner(System.in);
+        String Ycoordinate = "a";
 
-        String Xcoordinate = userinput.next();
+        while (true) {
+            Ycoordinate = userinput.next();
 
+            if (Ycoordinate.equals("a")) {
+                Ycoordinate = "0";
+                break;
+            } else if (Ycoordinate.equals("b")) {
+                Ycoordinate = "1";
+                break;
+            } else if (Ycoordinate.equals("c")) {
+                Ycoordinate = "2";
+                break;
+            } else if (Ycoordinate.equals("d")) {
+                Ycoordinate = "3";
+                break;
+            } else if (Ycoordinate.equals("e")) {
+                Ycoordinate = "4";
+                break;
+            } else if (Ycoordinate.equals("f")) {
+                Ycoordinate = "5";
+                break;
+            } else if (Ycoordinate.equals("g")) {
+                Ycoordinate = "6";
+                break;
+            } else if (Ycoordinate.equals("h")) {
+                Ycoordinate = "7";
+                break;
+            } else if (Ycoordinate.equals("i")) {
+                Ycoordinate = "8";
+                break;
+            } else if (Ycoordinate.equals("j")) {
+                Ycoordinate = "9";
+                break;
+            } else if (Ycoordinate.equals("k")) {
+                Ycoordinate = "10";
+                break;
+            } else {
+                System.out.println("your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid");
+            }
+        }
 
-        if (Xcoordinate.equals("a")){
-            Xcoordinate = "0";
-        }
-        else if (Xcoordinate.equals("b")){
-            Xcoordinate = "1";
-        }
-        else if (Xcoordinate.equals("c")){
-            Xcoordinate = "2";
-        }
-        else if (Xcoordinate.equals("d")){
-            Xcoordinate = "3";
-        }
-        else if (Xcoordinate.equals("e")){
-            Xcoordinate = "4";
-        }
-        else if (Xcoordinate.equals("f")){
-            Xcoordinate = "5";
-        }
-        else if (Xcoordinate.equals("g")){
-            Xcoordinate = "6";
-        }
-        else if (Xcoordinate.equals("h")){
-            Xcoordinate = "7";
-        }
-        else if (Xcoordinate.equals("i")){
-            Xcoordinate = "8";
-        }
-        else if (Xcoordinate.equals("j")){
-            Xcoordinate = "9";
-        }
-        else if (Xcoordinate.equals("k")){
-            Xcoordinate = "10";
-        }
 
 
 
         System.out.println("Tu dois maintenant choisir un chiffre de 0 à 10, ce chiffre correspond à la ligne ");
-        int Ycoordinate = userinput.nextInt();
+
+        while (true) {
+            String Xcoordinate = userinput.next();
+            if (Pattern.matches("[0-9]*", Xcoordinate) && (Integer.parseInt(Xcoordinate) < 10) && (Integer.parseInt(Xcoordinate) > -1 ))  {
+                table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)] = "X ";
+                break;
+            } else {
+                System.out.println("your entry is not valid, please choose a number between 0 and 9");
+            }
+        }
 
 
-        table[Integer.parseInt(Xcoordinate)][Ycoordinate] = "X ";
+
+
+
+
 
         return table;
 
