@@ -11,8 +11,10 @@ public class PrintGame {
         /** Affichage du plateau de jeu **/
         int line = 0;
         int column = 0;
-        System.out.println("   A    B    C    D    E    F    G    H    I    J    K");
-        System.out.println("---------------------------------------------------------");
+
+        //Print the whole grid.
+        System.out.println(" A    B    C    D    E    F   G    H    I   J    K");
+        System.out.println("------------------------------------------------------");
         for (line = 0; line < 10; line++) {
             System.out.print("| ");
             for (column = 0; column < 11; column++) {
@@ -23,7 +25,7 @@ public class PrintGame {
                     System.out.print(table[line][column] + " | ");
                 }
             }
-            System.out.println("---------------------------------------------------------");
+            System.out.println("------------------------------------------------------");
         }
     }
 
@@ -40,9 +42,11 @@ public class PrintGame {
         /** Remplissage du plateau de jeu **/
         for (line = 0; line < 10; line++) {
             for (column = 0; column < 11; column++) {
-                table[line][column] = "⬛";
+                table[line][column] = "⬛"; //fill the board with black cells
             }
         }
+
+        //add the players on the board
         String player1 = "\uD83D\uDD35";
         String player2 = "\uD83D\uDD34";
 

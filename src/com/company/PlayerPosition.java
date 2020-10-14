@@ -2,7 +2,7 @@ package com.company;
 
 public class PlayerPosition {
     /**
-     * Get player 1's line position. It is equivalent to the Y coordinate
+     * Get player's line position. It is equivalent to the Y coordinate
      * @param table
      * @return the line number on which the player is
      */
@@ -11,6 +11,7 @@ public class PlayerPosition {
         int line = 0;
         int positionLine = 0;
 
+        //Search the whole board to find player's line position
         for (line = 0; line < 10; line++) {
             for (column = 0; column < 11; column++) {
                 if (table[line][column].equals(player)) {
@@ -19,7 +20,6 @@ public class PlayerPosition {
             }
         }
         return positionLine;
-
     }
 
 
@@ -33,6 +33,7 @@ public class PlayerPosition {
         int line = 0;
         int positionCol = 0;
 
+        //Search the whole board to find player's line position
         for (line = 0; line < 10; line++) {
             for (column = 0; column < 11; column++) {
                 if (table[line][column].equals(player)) {
