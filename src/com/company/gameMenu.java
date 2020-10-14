@@ -68,9 +68,9 @@ public class gameMenu {
 
                 //To travel across the menu options
                 switch (chooseMenu) {
-                    case "q", "quit" -> menu = 'q';
-                    case "p", "play" -> menu = 's';
-                    case "ru", "rules", "r" -> menu = 'r';
+                    case "q", "quit", "1" -> menu = 'q';
+                    case "p", "play", "2" -> menu = 's';
+                    case "ru", "rules", "r","3" -> menu = 'r';
                     default -> printError();
                 }
             }
