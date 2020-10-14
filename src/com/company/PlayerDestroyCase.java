@@ -56,7 +56,7 @@ public class PlayerDestroyCase {
 
 
 
-        System.out.println("Tu dois maintenant choisir un chiffre de 0 à 10, ce chiffre correspond à la ligne ");
+        System.out.println("Tu dois maintenant choisir un chiffre de 0 à 9, ce chiffre correspond à la ligne ");
 
         while (true) {
             String Xcoordinate = userinput.next();
