@@ -12,5 +12,6 @@ public class Main {
         while (menu != 'q'){
             menu = gameMenu.menu(menu);
         }
+        System.out.println("Aurevoir");
     }
 }
