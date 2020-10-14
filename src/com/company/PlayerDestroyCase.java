@@ -52,14 +52,14 @@ public class PlayerDestroyCase {
                 Ycoordinate = "10";
                 break;
             } else {
-                System.out.println("your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid");
+                System.out.println("Your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid.");
             }
         }
 
 
 
 
-        System.out.println("Tu dois maintenant choisir un chiffre de 0 à 9, ce chiffre correspond à la ligne ");
+        System.out.println("Tu dois maintenant choisir un chiffre de 0 à 10, ce chiffre correspond à la ligne. ");
 
         while (true) {
 
@@ -76,14 +76,14 @@ public class PlayerDestroyCase {
                     }
 
                     else{
-                        System.out.println("I warned you, now you pass your turn");
+                        System.out.println("I warned you, now you pass your turn.");
                         break;
                     }
 
                 }
 
                 else {
-                    table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)] = "X ";
+                    table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)] = "⬜";
                     break;
                 }
 
@@ -91,7 +91,7 @@ public class PlayerDestroyCase {
 
             else
                 {
-                System.out.println("your entry is not valid, please choose a number between 0 and 9");
+                System.out.println("Your entry is not valid, please choose a number between 0 and 9");
             }
         }
 

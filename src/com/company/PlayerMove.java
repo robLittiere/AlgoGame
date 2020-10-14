@@ -20,11 +20,11 @@ public class PlayerMove {
         //Prends une entrée en terminal
         Scanner inpout = new Scanner(System.in);
 
-        System.out.println("Yo, voici les mouvements que tu peux faire");
-        System.out.println("Pour te déplacer vers la droite, entre : d");
-        System.out.println("Pour te déplacer vers la gauche, entre : q");
-        System.out.println("Pour te déplacer vers le haut, entre : z");
-        System.out.println("Pour te déplacer vers le bas, entre : s");
+        System.out.println("Hey! look what you can do:");
+        System.out.println("Move to the right: 'd' ");
+        System.out.println("Move to the left: 'q' ");
+        System.out.println("Move to the top: 'z' ");
+        System.out.println("Move to the bottom: 's' ");
 
 
         while (true) {
@@ -35,7 +35,7 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34") || table[positionLine][positionCol + 1].equals("X "))  {
+                else if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34") || table[positionLine][positionCol + 1].equals("⬜"))  {
                     System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
@@ -52,7 +52,7 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34") || table[positionLine][positionCol - 1].equals("X ")) {
+                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34") || table[positionLine][positionCol - 1].equals("⬜")) {
                     System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
@@ -69,7 +69,7 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35") || table[positionLine - 1][positionCol].equals("\uD83D\uDD34") || table[positionLine - 1][positionCol ].equals("X "))  {
+                else if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35") || table[positionLine - 1][positionCol].equals("\uD83D\uDD34") || table[positionLine - 1][positionCol ].equals("⬜"))  {
                     System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
@@ -87,7 +87,7 @@ public class PlayerMove {
                      break;
                 }
 
-                else if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34") || table[positionLine + 1][positionCol].equals("X "))  {
+                else if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34") || table[positionLine + 1][positionCol].equals("⬜"))  {
                     System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
