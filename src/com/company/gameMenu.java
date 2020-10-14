@@ -67,9 +67,9 @@ public class gameMenu {
                 chooseMenu = sc.next();
                 //To travel across the menu option
                 switch (chooseMenu) {
-                    case "q", "quit" -> menu = 'q';
-                    case "p", "play" -> menu = 's';
-                    case "ru", "rules", "r" -> menu = 'r';
+                    case "q", "quit", "1" -> menu = 'q';
+                    case "p", "play", "2" -> menu = 's';
+                    case "ru", "rules", "r","3" -> menu = 'r';
                     default -> printError();
                 }
             }

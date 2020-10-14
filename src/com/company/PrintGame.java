@@ -52,5 +52,4 @@ public class PrintGame {
         return table;
 
     }
-
 }

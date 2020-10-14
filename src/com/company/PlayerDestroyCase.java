@@ -10,9 +10,9 @@ public class PlayerDestroyCase {
         System.out.println("Maintenant choisit une case à détruire ");
         System.out.println("Tu dois d'abord choisir une lettre de 'a' à 'k' qui sera la colonne ");
         Scanner userinput = new Scanner(System.in);
-        String Ycoordinate = "a";
+        String Ycoordinate;
 
-        //Easter egg, If you try to delet your opponent caracter two times you pass your turn//
+        //Easter egg: If you try to delet your opponent caracter two times you pass your turn//
         int tries = 1;
 
         while (true) {
@@ -55,11 +55,7 @@ public class PlayerDestroyCase {
                 System.out.println("Your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid.");
             }
         }
-
-
-
-
-        System.out.println("Tu dois maintenant choisir un chiffre de 0 à 10, ce chiffre correspond à la ligne. ");
+        System.out.println("Tu dois maintenant choisir un chiffre de 0 à 9, ce chiffre correspond à la ligne. ");
 
         while (true) {
 
@@ -74,16 +70,13 @@ public class PlayerDestroyCase {
                         System.out.println("You really tried to obliterate your opponent ? You got one last chance to do right !");
                         tries++;
                     }
-
                     else{
                         System.out.println("I warned you, now you pass your turn.");
                         break;
                     }
-
                 }
                 else if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("⬜"))){
                     System.out.println("Oups, you tried to delete a cell that was already deleted, try again");
-
                 }
 
                 else {
@@ -92,23 +85,11 @@ public class PlayerDestroyCase {
                 }
 
             }
-
             else
                 {
                 System.out.println("Your entry is not valid, please choose a number between 0 and 9");
             }
         }
-
-
-
-
-
-
-
         return table;
-
     }
-
-
-
 }
