@@ -48,9 +48,11 @@ public class gameMenu {
                 }
             }
             case 'r' -> {
-                System.out.println("This is the rules of the game.");
-                jumpLine(5);
-                System.out.println("Return (re) /// Page 1 /// Next page (2)");
+                System.out.println("This is the rules of the game.\n");
+                System.out.println("1. Choose a nickname to be seen during the game and\nshow to your opponent who's the strongest.\n");
+                System.out.println("2. First on your turn, you can move once on a cell next\nto, and destroy one to try to block the opponent.\n");
+                System.out.println("3. If you can't move, you lose the game.Conversely,\nif it's your opponent who can't move, you win !\n");
+                System.out.println("Return (re) /// Page 1 /// Next page ?(2)");
                 chooseMenu = sc.next();
                 switch (chooseMenu) {
                     //Return to the menu
@@ -60,7 +62,7 @@ public class gameMenu {
                 }
             }
             case '2' ->{
-                System.out.println("Nothing here");
+                System.out.println("Why are your here ??");
                 jumpLine(2);
                 System.out.println("<- Go back (return)");
                 chooseMenu = sc.next();
