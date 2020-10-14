@@ -3,66 +3,83 @@ package com.company;
 import java.util.Scanner;
 
 public class gameMenu {
-    public static void clearScreen() {
-        /*System.out.println("\033\143");
-        System.out.flush();*/
-        for(int i = 0; i < 80; i++)
-            System.out.print("\b "); // Prints a backspace
+
+    /**
+     * Jump a few line
+     * @param line number of line the player want to jump
+     */
+    public static void jumpLine(int line)  {
+        for(int i = 0; i < line; i++)
+            System.out.print("\n"); // Prints a backspace
     }
+
+    /**
+     * To print a error when the player choose a wrong choice among the proposition
+     */
     public static void printError(){
         System.out.println("\n    Error. Wrong choice was made.\n");
     }
+
+    /**
+     * To know where the player is. Possible value:
+     * 'm', the main menu
+     * 'r', the main page of the rules of the game // '2' the second page of the rules
+     * 'p', the game, literally
+     * 'q', when the player want to quit
+     * @param menu the representation of what menu the player is in front
+     * @return an other value of menu where the player want to go
+     */
     public static char menu(char menu){
-        Scanner sc = new Scanner(System.in);
         //'menu' is use to know where the player is in the menu 'r'; 'm'; 'p'; 'q';
+        Scanner sc = new Scanner(System.in);
         String chooseMenu;      //the choice of the player
 
-        switch (menu){
-            case 'm':
-                clearScreen();
+        switch (menu) {
+            case 'm' -> {
                 System.out.println("Choose between 'play', 'rules' or 'quit':");
+                jumpLine(5);
+                chooseMenu = sc.next();
+                //To travel across the menu option
+                switch (chooseMenu) {
+                    case "q", "quit" -> menu = 'q';
+                    case "p", "play" -> menu = 'p';
+                    case "ru", "rules", "r" -> menu = 'r';
+                    default -> printError();
+                }
+            }
+            case 'r' -> {
+                System.out.println("This is the rules of the game.\n");
+                System.out.println("1. Choose a nickname to be seen during the game and\nshow to your opponent who's the strongest.\n");
+                System.out.println("2. First on your turn, you can move once on a cell next\nto, and destroy one to try to block the opponent.\n");
+                System.out.println("3. If you can't move, you lose the game.Conversely,\nif it's your opponent who can't move, you win !\n");
+                System.out.println("Return (re) /// Page 1 /// Next page ?(2)");
+                chooseMenu = sc.next();
+                switch (chooseMenu) {
+                    //Return to the menu
+                    case "re", "return", "r" -> menu = 'm';
+                    case "2", "page 2" -> menu = '2';
+                    default -> printError();
+                }
+            }
+            case '2' ->{
+                System.out.println("Why are your here ??");
+                jumpLine(2);
+                System.out.println("<- Go back (return)");
                 chooseMenu = sc.next();
                 switch (chooseMenu){
-                    case "q": case "quit":
-                        menu = 'q';
-                        break;
-                    case "p": case "play":
-                        menu = 'p';
-                        break;
-                    case "ru": case "rules": case "r":
-                        menu = 'r';
-                        break;
-                    default:
-                        printError();
+                    case "return", "r" -> menu = 'r';
+                    default -> printError();
                 }
-                break;
-            case 'r':
-                clearScreen();
-                System.out.println("This is the rules of the game.");
-                System.out.println("Return (re) /// Page 1 /// Next page (2)");
-
-                chooseMenu =sc.next();
-                switch (chooseMenu){
-                    case "re": case "return": case "r":     //Return to the menu
-                        menu = 'm';
-                        break;
-                    default:
-                        printError();
-                }
-                break;
-            case 'p':
-                clearScreen();
+            }
+            case 'p' -> {
                 System.out.println("Nothing for the moment.");
                 System.out.println("Please, write 'return' to go back to the menu.");
-                chooseMenu =sc.next();
-                switch (chooseMenu){
-                    case "r": case "return":
-                        menu= 'm';
-                        break;
-                    default:
-                        printError();
+                chooseMenu = sc.next();
+                switch (chooseMenu) {
+                    case "r", "return" -> menu = 'm';
+                    default -> printError();
                 }
-                break;
+            }
         }
         return menu;
     }
