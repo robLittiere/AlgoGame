@@ -5,6 +5,17 @@ import java.util.Scanner;
 public class gameMenu {
 
     private static String[][] gameBoard = PrintGame.createTable();
+    private static String player1;
+    private static String player2;
+
+    public static String nickname(int numberPlayer) {   // all player can choose their nickname
+
+        Scanner chooseName = new Scanner(System.in);
+
+        System.out.println("\nChoose your nickname Player "+ numberPlayer +" : ");
+        String player = chooseName.next();
+        return player;
+    }
 
     /**
      * Jump a few line
@@ -28,6 +39,7 @@ public class gameMenu {
      * 'r', the main page of the rules of the game // '2' the second page of the rules
      * 'p', the game, literally
      * 'q', when the player want to quit
+     * 's', to init the game
      * @param menu the representation of what menu the player is in front
      * @return an other value of menu where the player want to go
      */
@@ -44,7 +56,7 @@ public class gameMenu {
                 //To travel across the menu option
                 switch (chooseMenu) {
                     case "q", "quit" -> menu = 'q';
-                    case "p", "play" -> menu = 'p';
+                    case "p", "play" -> menu = 's';
                     case "ru", "rules", "r" -> menu = 'r';
                     default -> printError();
                 }
@@ -74,6 +86,10 @@ public class gameMenu {
                     case "return", "r" -> menu = 'r';
                     default -> printError();
                 }
+            }
+            case 's' -> {
+                player1 = nickname(1);
+                player2 = nickname(2);
             }
             case 'p' -> {
                 gameBoard = game.Game(gameBoard);
