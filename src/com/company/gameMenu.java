@@ -5,15 +5,20 @@ import java.util.Scanner;
 public class gameMenu {
 
     private static String[][] gameBoard = PrintGame.createTable();
-    private static String player1;
-    private static String player2;
+    public static String player1;
+    public static String player2;
 
+    /**
+     * To generate a new nickname
+     * @param numberPlayer just to write down the number of the player that can put his username
+     * @return the nickname
+     */
     public static String nickname(int numberPlayer) {   // all player can choose their nickname
-
         Scanner chooseName = new Scanner(System.in);
 
         System.out.println("\nChoose your nickname Player "+ numberPlayer +" : ");
-        String player = chooseName.next();
+        String player;
+        player = chooseName.next();
         return player;
     }
 
@@ -50,7 +55,14 @@ public class gameMenu {
 
         switch (menu) {
             case 'm' -> {
-                System.out.println("Choose between 'play', 'rules' or 'quit':");
+                jumpLine(2);
+                System.out.println("Welcome to");
+                System.out.println("        DESTRUCT CHESS");
+                jumpLine(2);
+                System.out.println("You can choose between:");
+                System.out.println("    'play', to begin a new game.");
+                System.out.println("    'rules', to see the rules, if you don't know them. Or");
+                System.out.println("    'quit', to ... what? I don't really know...");
                 jumpLine(5);
                 chooseMenu = sc.next();
                 //To travel across the menu option
@@ -64,7 +76,7 @@ public class gameMenu {
             case 'r' -> {
                 System.out.println("\nThis is the rules of the game.\n");
                 System.out.println(
-                        "1. Choose a nickname to be seen during the game and\nshow to your opponent who's the strongest.\n\n" +
+                        "1. Choose a nickname to be seen during the game and \n show to your opponent who's the strongest.\n\n" +
                         "2. First on your turn, you can move once on a cell next\nto, and destroy one to try to block the opponent.\n\n" +
                         "3. If you can't move, you lose the game.Conversely,\nif it's your opponent who can't move, you win !\n"
                 );
@@ -90,12 +102,10 @@ public class gameMenu {
             case 's' -> {
                 player1 = nickname(1);
                 player2 = nickname(2);
+                menu = 'p';
             }
-            case 'p' -> {
-                gameBoard = game.Game(gameBoard);
-            }
+            case 'p' -> gameBoard = game.Game(gameBoard);
         }
         return menu;
     }
-
 }

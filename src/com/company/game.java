@@ -9,7 +9,7 @@ public class game {
         PrintGame.printBoard(gameBoard);
 
         if (player) {
-            System.out.println("It's player 1 turn, You're the red ball, don't forget !!");
+            System.out.println("It's "+gameMenu.player1+"'s turn, You're the red ball, don't forget !!");
             gameMenu.jumpLine(2);
 
             PlayerMove.PlayerMove(gameBoard,"\uD83D\uDD34");
@@ -17,7 +17,7 @@ public class game {
             player = false;
         }
         else {
-            System.out.println("It's player 2 turn, You're the blue ball, don't forget !!");
+            System.out.println("It's "+gameMenu.player2+"'s turn, You're the blue ball, don't forget !!");
             gameMenu.jumpLine(2);
 
             PlayerMove.PlayerMove(gameBoard,"\uD83D\uDD35");
