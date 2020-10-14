@@ -35,8 +35,8 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34")) {
-                    System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
+                else if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34") || table[positionLine][positionCol + 1].equals("X "))  {
+                    System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
                 else {
@@ -52,8 +52,8 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34")) {
-                    System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
+                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34") || table[positionLine][positionCol - 1].equals("X ")) {
+                    System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
                 else {
@@ -69,8 +69,8 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35") || table[positionLine - 1][positionCol].equals("\uD83D\uDD34")) {
-                    System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
+                else if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35") || table[positionLine - 1][positionCol].equals("\uD83D\uDD34") || table[positionLine - 1][positionCol ].equals("X "))  {
+                    System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
                 else {
@@ -87,8 +87,8 @@ public class PlayerMove {
                      break;
                 }
 
-                else if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34")) {
-                    System.out.println("Tu as essayé de tricher, pour la peine tu passes ton tour !");
+                else if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34") || table[positionLine + 1][positionCol].equals("X "))  {
+                    System.out.println("Tu ne peux pas aller sur cette case, Réessayes!");
                 }
 
                 else {

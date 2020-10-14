@@ -12,6 +12,9 @@ public class PlayerDestroyCase {
         Scanner userinput = new Scanner(System.in);
         String Ycoordinate = "a";
 
+        //Easter egg, If you try to delet your opponent caracter two times you pass your turn//
+        int tries = 1;
+
         while (true) {
             Ycoordinate = userinput.next();
 
@@ -59,11 +62,35 @@ public class PlayerDestroyCase {
         System.out.println("Tu dois maintenant choisir un chiffre de 0 à 9, ce chiffre correspond à la ligne ");
 
         while (true) {
+
             String Xcoordinate = userinput.next();
-            if (Pattern.matches("[0-9]*", Xcoordinate) && (Integer.parseInt(Xcoordinate) < 10) && (Integer.parseInt(Xcoordinate) > -1 ))  {
-                table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)] = "X ";
-                break;
-            } else {
+
+            if (Pattern.matches("[0-9]*", Xcoordinate) && (Integer.parseInt(Xcoordinate) < 10)
+                    && (Integer.parseInt(Xcoordinate) > -1 ))
+            {
+                if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("\uD83D\uDD35"))
+                        || (table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("\uD83D\uDD34"))) {
+                    if(tries != 2) {
+                        System.out.println("You really tried to obliterate your opponent ? You got one last chance to do right ");
+                        tries++;
+                    }
+
+                    else{
+                        System.out.println("I warned you, now you pass your turn");
+                        break;
+                    }
+
+                }
+
+                else {
+                    table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)] = "X ";
+                    break;
+                }
+
+            }
+
+            else
+                {
                 System.out.println("your entry is not valid, please choose a number between 0 and 9");
             }
         }
