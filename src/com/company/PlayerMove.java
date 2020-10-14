@@ -10,6 +10,7 @@ public class PlayerMove {
      * @param table
      * @return Game board with player 1's position updated
      */
+
     public static String[][] PlayerMove(String[][] table, String player){
 
         //On récupère la position du joueur

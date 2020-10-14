@@ -71,7 +71,7 @@ public class PlayerDestroyCase {
                 if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("\uD83D\uDD35"))
                         || (table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("\uD83D\uDD34"))) {
                     if(tries != 2) {
-                        System.out.println("You really tried to obliterate your opponent ? You got one last chance to do right ");
+                        System.out.println("You really tried to obliterate your opponent ? You got one last chance to do right !");
                         tries++;
                     }
 
@@ -79,6 +79,10 @@ public class PlayerDestroyCase {
                         System.out.println("I warned you, now you pass your turn.");
                         break;
                     }
+
+                }
+                else if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("⬜"))){
+                    System.out.println("Oups, you tried to delete a cell that was already deleted, try again");
 
                 }
 
