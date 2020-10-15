@@ -20,8 +20,8 @@ public class PlayerMove {
 
         if (
                 ((positionCol-1) != -1)&&
-                        !((table[positionLine][positionCol - 1].equals(gameMenu.player2Design)) ||
-                                (table[positionLine][positionCol - 1].equals(gameMenu.player1Design)) ||
+                        !((table[positionLine][positionCol - 1].equals("\uD83D\uDD35")) ||
+                                (table[positionLine][positionCol - 1].equals("\uD83D\uDD34")) ||
                                 (table[positionLine][positionCol - 1].equals("⬜")))
         ){
             System.out.println("    -Move to the left: 'q' ");
@@ -29,8 +29,8 @@ public class PlayerMove {
         }
         if(
                 (positionCol+1 != 11)&&
-                        !((table[positionLine][positionCol + 1].equals(gameMenu.player2Design)) ||
-                                (table[positionLine][positionCol + 1].equals(gameMenu.player1Design)) ||
+                        !((table[positionLine][positionCol + 1].equals("\uD83D\uDD35")) ||
+                                (table[positionLine][positionCol + 1].equals("\uD83D\uDD34")) ||
                                 (table[positionLine][positionCol + 1].equals("⬜")))
         ){
             System.out.println("    -Move to the right: 'd' ");
@@ -38,8 +38,8 @@ public class PlayerMove {
         }
         if(
                 ((positionLine-1) != -1) &&
-                        !((table[positionLine - 1][positionCol].equals(gameMenu.player2Design)) ||
-                                (table[positionLine - 1][positionCol].equals(gameMenu.player1Design)) ||
+                        !((table[positionLine - 1][positionCol].equals("\uD83D\uDD35")) ||
+                                (table[positionLine - 1][positionCol].equals("\uD83D\uDD34")) ||
                                 (table[positionLine - 1][positionCol].equals("⬜")))
         ){
             System.out.println("    -Move to the top 'z' ");
@@ -47,8 +47,8 @@ public class PlayerMove {
         }
         if(
                 (positionLine+1 != 10)&&
-                        !((table[positionLine + 1][positionCol].equals(gameMenu.player2Design)) ||
-                                (table[positionLine + 1][positionCol].equals(gameMenu.player1Design)) ||
+                        !((table[positionLine + 1][positionCol].equals("\uD83D\uDD35")) ||
+                                (table[positionLine + 1][positionCol].equals("\uD83D\uDD34")) ||
                                 (table[positionLine + 1][positionCol].equals("⬜")))
         ){
             System.out.println("    -Move to the bottom: 's' ");
@@ -64,11 +64,12 @@ public class PlayerMove {
      * @param table -- the game board as it is before and the player.
      * @return Game board with the players position updated
      */
-    public static String PlayerMove(String[][] table, String player){
+    public static String[][] PlayerMove(String[][] table, String player){
 
         //Get players position
         int positionLine = PlayerPosition.getPlayerPositionLine(table, player);
         int positionCol = PlayerPosition.getPlayerPositionCol(table, player);
+
 
         //Add a user input
         Scanner input = new Scanner(System.in);
@@ -92,7 +93,7 @@ public class PlayerMove {
                 }
 
                 //Check if next position is already occupied
-                else if (table[positionLine][positionCol + 1].equals(gameMenu.player2Design) || table[positionLine][positionCol + 1].equals(gameMenu.player1Design) || table[positionLine][positionCol + 1].equals("⬜"))  {
+                else if (table[positionLine][positionCol + 1].equals("\uD83D\uDD35") || table[positionLine][positionCol + 1].equals("\uD83D\uDD34") || table[positionLine][positionCol + 1].equals("⬜"))  {
                     System.out.println("You cannot go on this cell, try again !");
                 }
                 // If not, it's ok
@@ -113,8 +114,8 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine][positionCol - 1].equals(gameMenu.player2Design) ||
-                        table[positionLine][positionCol - 1].equals(gameMenu.player1Design) ||
+                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") ||
+                        table[positionLine][positionCol - 1].equals("\uD83D\uDD34") ||
                         table[positionLine][positionCol - 1].equals("⬜")) {
                     System.out.println("You cannot go on this cell, try again !");
                 }
@@ -132,7 +133,7 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine - 1][positionCol].equals(gameMenu.player2Design) || table[positionLine - 1][positionCol].equals(gameMenu.player1Design) || table[positionLine - 1][positionCol ].equals("⬜"))  {
+                else if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35") || table[positionLine - 1][positionCol].equals("\uD83D\uDD34") || table[positionLine - 1][positionCol ].equals("⬜"))  {
                     System.out.println("You cannot go on this cell, try again !");
                 }
 
@@ -150,7 +151,7 @@ public class PlayerMove {
                      break;
                 }
 
-                else if (table[positionLine + 1][positionCol].equals(gameMenu.player2Design) || table[positionLine + 1][positionCol].equals(gameMenu.player1Design) || table[positionLine + 1][positionCol].equals("⬜"))  {
+                else if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34") || table[positionLine + 1][positionCol].equals("⬜"))  {
                     System.out.println("You cannot go on this cell, try again !");
                 }
 
@@ -166,6 +167,6 @@ public class PlayerMove {
             }
         }
 
-        return player;
+        return table;
     }
 }

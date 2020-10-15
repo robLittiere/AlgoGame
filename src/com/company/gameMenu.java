@@ -25,11 +25,11 @@ public class gameMenu {
         while (player.length()<2 || player.length()>10){
 
             if (player.length() < 2) {
-                System.out.println("your nickname is too short, do another one.");
+                System.out.println("Your nickname is too short, do another one. ");
                 player = chooseName.next();
             }
             else if (player.length() > 10) {
-                System.out.println("your nickname is too long, do another one.");
+                System.out.println("Your nickname is too long, do another one.");
                 player = chooseName.next();
             }
             else{
@@ -75,12 +75,14 @@ public class gameMenu {
                 //main menu
                 jumpLine(2);
                 System.out.println("Welcome to");
-                System.out.println("        DESTRUCT CHESS");
-                jumpLine(2);
+                System.out.println("\uD83D\uDE92 \uD83D\uDCA3 \uD83D\uDCA5  DARK DEMOLITION  \uD83D\uDCA5 \uD83D\uDCA3 \uD83D\uDE92 ");
+                jumpLine(1);
                 System.out.println("You can choose between:");
-                System.out.println(" 1️⃣    'play', 'p': to begin a new game.");
-                System.out.println(" 2️⃣    'rules', 'r': to see the rules, if you don't know them. Or");
-                System.out.println(" 3️⃣    'quit', 'q': to ... what? I don't really know...");
+                System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
+                System.out.println("| 1️⃣    'play', 'p': to begin a new game.                       |");
+                System.out.println("| 2️⃣    'rules', 'r': to see the rules, if you don't know them. |");
+                System.out.println("| 3️⃣    'quit', 'q': to ... what? I don't really know...        |");
+                System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
                 jumpLine(5);
                 chooseMenu = sc.next();
 
@@ -96,9 +98,9 @@ public class gameMenu {
                 //the rule
                 System.out.println("\n \uD83D\uDCDC There are the game's rules \uD83D\uDCDC\n");
                 System.out.println(
-                        "1. Choose a nickname to display during the game and \n show your opponent who's the strongest.\n\n" +
-                        "2. First, on your turn, you can move on an adjacent cell \n, and then destroy a cell in order to try to block the opponent.\n\n" +
-                        "3. If you can't move, you lose the game.Conversely,\nif your opponent gets blocked and can't move, you win !\n"
+                        "1️⃣ Choose a nickname to display during the game and \n show your opponent who's the strongest.\n\n" +
+                        "2️⃣ First, on your turn, you can move on an adjacent cell \n, and then destroy a cell in order to try to block the opponent.\n\n" +
+                        "3️⃣ If you can't move, you lose the game.Conversely,\nif your opponent gets blocked and can't move, you win !\n"
                 );
                 System.out.println("Back to menu: 'Return', 're', 'r' /// Page 1 /// Next page ?(2)");
                 chooseMenu = sc.next();
@@ -111,7 +113,7 @@ public class gameMenu {
             }
             case '2' ->{
                 //second page of the rule
-                System.out.println("Why are your here ??");
+                System.out.println("Why are your here ?? ");
                 jumpLine(2);
                 System.out.println("<- Go back 'return'");
                 chooseMenu = sc.next();
@@ -146,16 +148,17 @@ public class gameMenu {
             }
             case 'e' -> {
                 //the end of the game
-                System.out.println("            Congratz ");
-                System.out.println("            Congratz ");
-                System.out.println("            Congratz ");
-
+                System.out.println("\uD83C\uDF8A   #------------#   \uD83C\uDF8A");
+                System.out.println("     |  Good Job! |");
+                System.out.println("     |  You are   |");
+                System.out.println("     |  THE BEST  |");
+                System.out.println("\uD83C\uDF89   #------------#   \uD83C\uDF89");
                 //'player' is 'true' or 'false' depend of the turn of the player
                 if (game.player){
-                    System.out.println("\uD83D\uDD35 "+player2+" \uD83D\uDD35 a gagné la partie !");
+                    System.out.println("\uD83C\uDFC6 \uD83E\uDD47 \uD83D\uDD35 "+player2+" \uD83D\uDD35 has won the game ! \uD83E\uDD47 \uD83C\uDFC6");
                 }
                 else {
-                    System.out.println("\uD83D\uDD34 "+player1+" \uD83D\uDD34 a gagné la partie !");
+                    System.out.println("\uD83C\uDFC6 \uD83E\uDD47 \uD83D\uDD34 "+player1+" \uD83D\uDD34 has won the game ! \uD83E\uDD47 \uD83C\uDFC6");
                 }
                 jumpLine(2);
                 System.out.println("\n Write 'back' to get back to the menu.\n" +

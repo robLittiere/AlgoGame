@@ -11,7 +11,7 @@ public class PlayerDestroyCase {
      */
     public static String[][] destroyCell(String [][] table){
 
-        System.out.println("Now, choose a cell to destroy.");
+        System.out.println("Now, choose a cell to destroy. \uD83D\uDCA5");
         System.out.println("First you choose a letter among 'a' to 'k' which represent the column");
 
         //Initiate a scanner to get user input coordinates. Here is the Y coordinate
@@ -66,12 +66,12 @@ public class PlayerDestroyCase {
 
             //If none of the option is valid, we go back to the beginning of the loop, reminding him his options
             else {
-                System.out.println("Your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid.");
+                System.out.println(" ⚠️ Your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid. ⚠️");
             }
         }
 
 
-        System.out.println("Now, you must choose a number between 0 and 9, the number corresponds to the line coordinate");
+        System.out.println("Now, you must choose a number between 0️⃣ and 9️⃣, the number corresponds to the line coordinate");
 
 
         /*
@@ -91,12 +91,12 @@ public class PlayerDestroyCase {
                         || (table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("\uD83D\uDD34"))) {
                     //If they are, we warn him that he cannot destroy his opponent's case
                     if(tries != 2) {
-                        System.out.println("You really tried to obliterate your opponent ? You got one last chance to do right !");
+                        System.out.println(" \uD83D\uDE21 You really tried to obliterate your opponent ? You got one last chance to do right !");
                         tries++;
                     }
                     //If he does it again, he looses his turn
                     else{
-                        System.out.println("I warned you, now you pass your turn.");
+                        System.out.println(" (ง ͠° ͟ل͜ ͡°)ง I warned you, now you pass your turn.");
                         break;
                     }
 
@@ -119,7 +119,7 @@ public class PlayerDestroyCase {
             //If he chooses something else than a number from 0 to 9, player gets to choose again, reminding him his options
             else
                 {
-                System.out.println("Your entry is not valid, please choose a number between 0 and 9");
+                System.out.println("Your entry is not valid, please choose a number between 0️⃣ and 9️⃣.");
             }
         }
 

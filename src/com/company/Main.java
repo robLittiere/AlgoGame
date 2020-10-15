@@ -17,6 +17,6 @@ public class Main {
         while (menu != 'q'){
             menu = gameMenu.menu(menu);
         }
-        System.out.println("Goodbye, thanks for playing");
+        System.out.println(" \uD83D\uDC4B Goodbye, thanks for playing");
     }
 }
