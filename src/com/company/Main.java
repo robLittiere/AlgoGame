@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    /**
+    /*
      * The main function.
      * We launch the whole game from here. We also terminate it from here.
-     * @param args
      */
     public static void main(String[] args) {
 

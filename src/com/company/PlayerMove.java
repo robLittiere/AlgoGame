@@ -62,9 +62,8 @@ public class PlayerMove {
     /**
      * A function that allows us to move players to an adjacent cell
      * @param table -- the game board as it is before and the player.
-     * @return Game board with the players position updated
      */
-    public static String PlayerMove(String[][] table, String player){
+    public static void playerMove(String[][] table, String player){
 
         //Get players position
         int positionLine = PlayerPosition.getPlayerPositionLine(table, player);
@@ -165,7 +164,5 @@ public class PlayerMove {
                 System.out.println("You tried to cheat by going out of the board ! You really thought you'd teleport ?     Pass your turn.");
             }
         }
-
-        return player;
     }
 }

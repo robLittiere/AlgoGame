@@ -100,7 +100,7 @@ public class gameMenu {
                         "2. First, on your turn, you can move on an adjacent cell \n, and then destroy a cell in order to try to block the opponent.\n\n" +
                         "3. If you can't move, you lose the game.Conversely,\nif your opponent gets blocked and can't move, you win !\n"
                 );
-                System.out.println("Back to menu: 'Return', 're', 'r' /// Page 1 /// Next page ?(2)");
+                System.out.println("Back to menu: 'Return' /// Page 1 /// Next page ?(2)");
                 chooseMenu = sc.next();
                 switch (chooseMenu) {
                     //Return to the menu
