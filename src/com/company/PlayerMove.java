@@ -61,7 +61,7 @@ public class PlayerMove {
 
     /**
      * A function that allows us to move players to an adjacent cell
-     * @param table -- the game board as it is before
+     * @param table -- the game board as it is before and the player.
      * @return Game board with the players position updated
      */
     public static String[][] PlayerMove(String[][] table, String player){

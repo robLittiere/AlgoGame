@@ -120,8 +120,33 @@ public class gameMenu {
                 player2 = nickname(2);
                 menu = 'p';
             }
-            case 'p' -> gameBoard = game.Game(gameBoard);
+
+            case 'e' -> {
+                System.out.println("            Congratz ");
+
+            }
+            case 'p' -> {
+                String player1Design = "\uD83D\uDD34";
+                String player2Design = "\uD83D\uDD35";
+
+                if (WinConditions.checkIfPlayerLost(gameBoard, player1Design) == true){
+                    PrintGame.printBoard(gameBoard);
+                    jumpLine(30);
+
+                    menu = 'm';
+
+                }
+
+                else if (WinConditions.checkIfPlayerLost(gameBoard, player2Design) == true){
+                    PrintGame.printBoard(gameBoard);
+                    menu = 'm';
+                }
+                else{
+                    game.Game(gameBoard, player1Design, player2Design);
+                }
+            }
         }
         return menu;
     }
+
 }

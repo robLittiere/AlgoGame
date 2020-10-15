@@ -22,14 +22,14 @@ public class PlayerDestroyCase {
         int tries = 1;
 
         /*
-         * Initiate infinite loop in order to force the player to play his turn avoiding any different bugs
+         * Initiate infinite loop in order to force the player to play his turn avoiding any bugs
          * If user's Y coordinate is equal to one of the letter of the grid, we can get out of the loop
          */
         while (true) {
             Ycoordinate = userinput.next();
 
-            //Or "q" for qwerty kevboards
-            if (Ycoordinate.equals("a") || Ycoordinate.equals("q") ) {
+
+            if (Ycoordinate.equals("a")){
                 Ycoordinate = "0";
                 break;
             } else if (Ycoordinate.equals("b")) {
