@@ -4,6 +4,60 @@ import java.util.Scanner;
 
 public class PlayerMove {
 
+    /**
+     * To print the possible movement the player can do
+     * @param table the table of the game
+     * @param player the player that are playing the turn
+     */
+    public static void possibleMovement(String[][] table, String player){
+
+        //Get players position
+        int positionLine = PlayerPosition.getPlayerPositionLine(table, player);
+        int positionCol = PlayerPosition.getPlayerPositionCol(table, player);
+        boolean lose = true;
+
+        System.out.println("Hey! look what you can do:\n");
+
+        if (
+                ((positionCol-1) != -1)&&
+                        !((table[positionLine][positionCol - 1].equals("\uD83D\uDD35")) ||
+                                (table[positionLine][positionCol - 1].equals("\uD83D\uDD34")) ||
+                                (table[positionLine][positionCol - 1].equals("⬜")))
+        ){
+            System.out.println("    -Move to the left: 'q' ");
+            lose = false;
+        }
+        if(
+                (positionCol+1 != 11)&&
+                        !((table[positionLine][positionCol + 1].equals("\uD83D\uDD35")) ||
+                                (table[positionLine][positionCol + 1].equals("\uD83D\uDD34")) ||
+                                (table[positionLine][positionCol + 1].equals("⬜")))
+        ){
+            System.out.println("    -Move to the right: 'd' ");
+            lose = false;
+        }
+        if(
+                ((positionLine-1) != -1) &&
+                        !((table[positionLine - 1][positionCol].equals("\uD83D\uDD35")) ||
+                                (table[positionLine - 1][positionCol].equals("\uD83D\uDD34")) ||
+                                (table[positionLine - 1][positionCol].equals("⬜")))
+        ){
+            System.out.println("    -Move to the top 'z' ");
+            lose = false;
+        }
+        if(
+                (positionLine+1 != 10)&&
+                        !((table[positionLine + 1][positionCol].equals("\uD83D\uDD35")) ||
+                                (table[positionLine + 1][positionCol].equals("\uD83D\uDD34")) ||
+                                (table[positionLine + 1][positionCol].equals("⬜")))
+        ){
+            System.out.println("    -Move to the bottom: 's' ");
+            lose = false;
+        }
+        if(lose){
+            System.out.println("    Sorry no movement can be accomplished, you lose");
+        }
+    }
 
     /**
      * A function that allows us to move players to an adjacent cell
@@ -20,11 +74,7 @@ public class PlayerMove {
         //Add a user input
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Hey! look what you can do:");
-        System.out.println("Move to the right: 'd' ");
-        System.out.println("Move to the left: 'q' ");
-        System.out.println("Move to the top: 'z' ");
-        System.out.println("Move to the bottom: 's' ");
+        possibleMovement(table,player);
 
         /*
          * This while loop allows the player to choose in which direction to move. He can choose to move to the top, bottom, left or right
@@ -64,7 +114,9 @@ public class PlayerMove {
                     break;
                 }
 
-                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") || table[positionLine][positionCol - 1].equals("\uD83D\uDD34") || table[positionLine][positionCol - 1].equals("⬜")) {
+                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDD35") ||
+                        table[positionLine][positionCol - 1].equals("\uD83D\uDD34") ||
+                        table[positionLine][positionCol - 1].equals("⬜")) {
                     System.out.println("You cannot go on this cell, try again !");
                 }
 

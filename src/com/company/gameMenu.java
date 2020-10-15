@@ -21,13 +21,14 @@ public class gameMenu {
         System.out.println("\nChoose your nickname Player "+numberPlayer+" : ");
         String player = chooseName.next();
         while (player.length()<2 || player.length()>10){
-            player = chooseName.next();
 
             if (player.length() < 2) {
                 System.out.println("your nickname is too short, do another one.");
+                player = chooseName.next();
             }
             else if (player.length() > 10) {
                 System.out.println("your nickname is too long, do another one.");
+                player = chooseName.next();
             }
             else{
                 break;
