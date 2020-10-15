@@ -64,7 +64,7 @@ public class PlayerMove {
      * @param table -- the game board as it is before and the player.
      * @return Game board with the players position updated
      */
-    public static String[][] PlayerMove(String[][] table, String player){
+        public static String[][] PlayerMove(String[][] table, String player){
 
         //Get players position
         int positionLine = PlayerPosition.getPlayerPositionLine(table, player);

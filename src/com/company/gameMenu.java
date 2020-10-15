@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class gameMenu {
@@ -9,6 +10,7 @@ public class gameMenu {
     public static String player2;
     public static String player1Design = "\uD83D\uDD34";
     public static String player2Design = "\uD83D\uDD35";
+    public static int gameNumber = 1;
 
     /**
      * To generate a new nickname
@@ -55,6 +57,7 @@ public class gameMenu {
         System.out.println("\n    Error. Wrong choice was made.\n");
     }
 
+
     /**
      * To know where the player is. Possible values:
      * 'm', the main menu
@@ -65,7 +68,7 @@ public class gameMenu {
      * @param menu the representation of which menu the player is at
      * @return an other value of menu where the player wants to go
      */
-    public static char menu(char menu){
+    public static char menu(char menu) throws IOException {
         //'menu' is used to know where the player is in the menu 'r'; 'm'; 'p'; 'q';
         Scanner sc = new Scanner(System.in);
         String chooseMenu;      //the player's choice
@@ -99,8 +102,8 @@ public class gameMenu {
                 System.out.println("\n \uD83D\uDCDC There are the game's rules \uD83D\uDCDC\n");
                 System.out.println(
                         "1️⃣ Choose a nickname to display during the game and \n show your opponent who's the strongest.\n\n" +
-                        "2️⃣ First, on your turn, you can move on an adjacent cell \n, and then destroy a cell in order to try to block the opponent.\n\n" +
-                        "3️⃣ If you can't move, you lose the game.Conversely,\nif your opponent gets blocked and can't move, you win !\n"
+                                "2️⃣ First, on your turn, you can move on an adjacent cell \n, and then destroy a cell in order to try to block the opponent.\n\n" +
+                                "3️⃣ If you can't move, you lose the game.Conversely,\nif your opponent gets blocked and can't move, you win !\n"
                 );
                 System.out.println("Back to menu: 'Return' /// Page 1 /// Next page ?(2)");
                 chooseMenu = sc.next();
@@ -156,14 +159,21 @@ public class gameMenu {
                 //'player' is 'true' or 'false' depend of the turn of the player
                 if (game.player){
                     System.out.println("\uD83C\uDFC6 \uD83E\uDD47 \uD83D\uDD35 "+player2+" \uD83D\uDD35 has won the game ! \uD83E\uDD47 \uD83C\uDFC6");
+                    WriteFile data = new WriteFile("score.txt", true );
+                    data.writeToFile( player2 + " has destroyed the game number " + gameNumber + " He's the true Annihilator");
+                    gameNumber ++;
+
                 }
                 else {
                     System.out.println("\uD83C\uDFC6 \uD83E\uDD47 \uD83D\uDD34 "+player1+" \uD83D\uDD34 has won the game ! \uD83E\uDD47 \uD83C\uDFC6");
+                    WriteFile data = new WriteFile("score.txt", true );
+                    data.writeToFile( player1 + " has destroyed the game number " + gameNumber + " what a boss");
+                    gameNumber++;
                 }
                 jumpLine(2);
                 System.out.println("\n Write 'back' to get back to the menu.\n" +
-                                "   'replay' to replay the game.\n" +
-                                "   and 'quit' to quit but, why ?\n");
+                        "   'replay' to replay the game.\n" +
+                        "   and 'quit' to quit but, why ?\n");
 
                 chooseMenu = sc.next();
                 switch (chooseMenu){
