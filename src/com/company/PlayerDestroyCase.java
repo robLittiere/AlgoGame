@@ -7,9 +7,8 @@ public class PlayerDestroyCase {
     /**
      * Function that allows us to destroy a cell
      * @param table -- the game board in the state it is before the function call
-     * @return table -- the game board in the state it is after the function call, with a cell destroyed
      */
-    public static String[][] destroyCell(String [][] table){
+    public static void destroyCell(String [][] table){
 
         System.out.println("Now, choose a cell to destroy. \uD83D\uDCA5");
         System.out.println("First you choose a letter among 'a' to 'k' which represent the column");
@@ -27,7 +26,6 @@ public class PlayerDestroyCase {
          */
         while (true) {
             Ycoordinate = userinput.next();
-
 
             if (Ycoordinate.equals("a")){
                 Ycoordinate = "0";
@@ -63,7 +61,6 @@ public class PlayerDestroyCase {
                 Ycoordinate = "10";
                 break;
             }
-
             //If none of the option is valid, we go back to the beginning of the loop, reminding him his options
             else {
                 System.out.println(" ⚠️ Your entry is not valid, please choose a letter from 'a' to 'k' as presented in the grid. ⚠️");
@@ -99,32 +96,22 @@ public class PlayerDestroyCase {
                         System.out.println(" (ง ͠° ͟ل͜ ͡°)ง I warned you, now you pass your turn.");
                         break;
                     }
-
                 }
-
                 //Check if coordinates correspond to a destroyed cell
                 //If it is, he gets to replay his turn
                 else if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("⬜"))){
                     System.out.println("Oups, you tried to delete a cell that was already deleted, try again");
-
                 }
-
                 else {
                     table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)] = "⬜";
                     break;
                 }
-
             }
-
             //If he chooses something else than a number from 0 to 9, player gets to choose again, reminding him his options
             else
                 {
                 System.out.println("Your entry is not valid, please choose a number between 0️⃣ and 9️⃣.");
             }
         }
-
-        //We finally return the game board
-        return table;
-
     }
 }
