@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class gameMenu {
     public static String player1Design = "\uD83D\uDD34";
     public static String player2Design = "\uD83D\uDD35";
     public static int gameNumber = 1;
+    private static Object FileReader;
 
     /**
      * To generate a new nickname
@@ -65,6 +67,7 @@ public class gameMenu {
      * 'p', the game, literally
      * 'q', when the player wants to quit
      * 's', to initiate the game
+     * 'h', for the high score
      * @param menu the representation of which menu the player is at
      * @return an other value of menu where the player wants to go
      */
@@ -82,9 +85,10 @@ public class gameMenu {
                 jumpLine(1);
                 System.out.println("You can choose between:");
                 System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
-                System.out.println("| 1️⃣    'play', 'p': to begin a new game.                       |");
-                System.out.println("| 2️⃣    'rules', 'r': to see the rules, if you don't know them. |");
-                System.out.println("| 3️⃣    'quit', 'q': to ... what? I don't really know...        |");
+                System.out.println("| 1️⃣    'play': to begin a new game.                       |");
+                System.out.println("| 2️⃣    'rules': to see the rules, if you don't know them. |");
+                System.out.println("| 3️⃣    'quit': to ... what? I don't really know...        |");
+                System.out.println("|       'high', to see the greatest score in this game     |");
                 System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
                 jumpLine(5);
                 chooseMenu = sc.next();
@@ -94,6 +98,7 @@ public class gameMenu {
                     case "q", "quit", "1" -> menu = 'q';
                     case "p", "play", "2" -> menu = 's';
                     case "ru", "rules", "r","3" -> menu = 'r';
+                    case "high", "h", "4" -> menu = 'h';
                     default -> printError();
                 }
             }
@@ -183,8 +188,19 @@ public class gameMenu {
                     default -> printError();
                 }
             }
+            case 'h' -> {
+                //A completer
+                System.out.println("High Score\n");
+                System.out.println(" has destroyed the game number " + gameNumber + " He's the true Annihilator");
+                jumpLine(6);
+                System.out.println("<- Go back 'return'");
+                chooseMenu = sc.next();
+                switch (chooseMenu){
+                    case "return", "r" -> menu = 'r';
+                    default -> printError();
+                }
+            }
         }
         return menu;
     }
-
 }
