@@ -123,24 +123,25 @@ public class gameMenu {
 
             case 'e' -> {
                 System.out.println("            Congratz ");
-
+                System.out.println("            Congratz ");
+                System.out.println("            Congratz ");
+                menu
             }
             case 'p' -> {
                 String player1Design = "\uD83D\uDD34";
                 String player2Design = "\uD83D\uDD35";
 
-                if (WinConditions.checkIfPlayerLost(gameBoard, player1Design) == true){
+                if (WinConditions.checkIfPlayerLost(gameBoard, player1Design) || WinConditions.checkIfPlayerLost(gameBoard, player2Design )){
+                    jumpLine(4);
                     PrintGame.printBoard(gameBoard);
-                    jumpLine(30);
+                    jumpLine(4);
+
+
 
                     menu = 'm';
 
                 }
 
-                else if (WinConditions.checkIfPlayerLost(gameBoard, player2Design) == true){
-                    PrintGame.printBoard(gameBoard);
-                    menu = 'm';
-                }
                 else{
                     game.Game(gameBoard, player1Design, player2Design);
                 }
