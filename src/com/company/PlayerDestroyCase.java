@@ -99,7 +99,7 @@ public class PlayerDestroyCase {
                 }
                 //Check if coordinates correspond to a destroyed cell
                 //If it is, he gets to replay his turn
-                else if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("⬜"))){
+                else if ((table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("⬜") || (table[Integer.parseInt(Xcoordinate)][Integer.parseInt(Ycoordinate)].equals("\uD83D\uDFE8")))){
                     System.out.println("Oups, you tried to delete a cell that was already deleted, try again");
                 }
                 else {

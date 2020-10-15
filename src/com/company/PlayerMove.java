@@ -64,14 +64,17 @@ public class PlayerMove {
      * @param table -- the game board as it is before and the player.
      * @return Game board with the players position updated
      */
-        public static String[][] PlayerMove(String[][] table, String player){
+        public static String[][] PlayerMove(String[][] table, String player, String player2){
 
-        //Get players position
+        //Get players position. player1 and player2
         int positionLine = PlayerPosition.getPlayerPositionLine(table, player);
         int positionCol = PlayerPosition.getPlayerPositionCol(table, player);
+        int positionLine2 = PlayerPosition.getPlayerPositionLine(table, player2);
+        int positionCol2 = PlayerPosition.getPlayerPositionCol(table, player2);
 
 
         //Add a user input
+
         Scanner input = new Scanner(System.in);
 
         possibleMovement(table,player);
@@ -97,6 +100,17 @@ public class PlayerMove {
                     System.out.println("You cannot go on this cell, try again !");
                 }
                 // If not, it's ok
+
+                else if (table[positionLine][positionCol + 1].equals("\uD83D\uDFE8")){
+                    //Those two lines allow us to swap the players positions
+                    table[positionLine2][positionCol2] = player;
+                    table[positionLine][positionCol + 1] = player2;
+                    table[positionLine][positionCol] = "⬛";  // Replace old players position
+
+                    break;
+                }
+
+
                 else {
                     table[positionLine][positionCol + 1] = player;
                     table[positionLine][positionCol] = "⬛";  // Replace old players position
@@ -120,6 +134,14 @@ public class PlayerMove {
                     System.out.println("You cannot go on this cell, try again !");
                 }
 
+                else if (table[positionLine][positionCol - 1].equals("\uD83D\uDFE8")){
+                    //Those two lines allow us to swap the players positions
+                    table[positionLine2][positionCol2] = player;
+                    table[positionLine][positionCol - 1] = player2;
+                    table[positionLine][positionCol] = "⬛";  //Replace the old player's position
+                    break;
+                }
+
                 else {
                     table[positionLine][positionCol - 1] = player;
                     table[positionLine][positionCol] = "⬛";
@@ -135,6 +157,14 @@ public class PlayerMove {
 
                 else if (table[positionLine - 1][positionCol].equals("\uD83D\uDD35") || table[positionLine - 1][positionCol].equals("\uD83D\uDD34") || table[positionLine - 1][positionCol ].equals("⬜"))  {
                     System.out.println("You cannot go on this cell, try again !");
+                }
+
+                else if (table[positionLine - 1][positionCol].equals("\uD83D\uDFE8")){
+                    //Those two lines allow us to swap the players positions
+                    table[positionLine2][positionCol2] = player;
+                    table[positionLine - 1][positionCol] = player2;
+                    table[positionLine][positionCol] = "⬛";
+                    break;
                 }
 
                 else {
@@ -153,6 +183,14 @@ public class PlayerMove {
 
                 else if (table[positionLine + 1][positionCol].equals("\uD83D\uDD35") || table[positionLine + 1][positionCol].equals("\uD83D\uDD34") || table[positionLine + 1][positionCol].equals("⬜"))  {
                     System.out.println("You cannot go on this cell, try again !");
+                }
+
+                else if (table[positionLine + 1][positionCol].equals("\uD83D\uDFE8")){
+                    //Those two lines allow us to swap the players positions
+                    table[positionLine2][positionCol2] = player;
+                    table[positionLine + 1][positionCol] = player2;
+                    table[positionLine][positionCol] = "⬛";
+                    break;
                 }
 
                 else {

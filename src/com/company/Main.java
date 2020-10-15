@@ -5,7 +5,6 @@ import java.io.IOException;
 
 public class Main {
 
-    int i = 0;
     /*
      * The main function.
      * We launch the whole game from here. We also terminate it from here.

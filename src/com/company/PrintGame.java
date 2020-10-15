@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class PrintGame {
 
     /**
@@ -13,7 +15,7 @@ public class PrintGame {
         int column;
 
         //Print the whole grid.
-        System.out.println(" A    B    C    D    E    F   G    H    I   J    K");
+        System.out.println("  A    B    C    D   E    F   G    H    I   J    K");
         System.out.println("------------------------------------------------------");
         for (line = 0; line < 10; line++) {
             System.out.print("| ");
@@ -31,7 +33,7 @@ public class PrintGame {
 
     /**
      * Create the board to initiate a game.
-     * @return the board as it is
+     * @return the board as it is.
      */
     public static String[][] createTable(){
         String[][] table = new String[10][11];
@@ -47,9 +49,39 @@ public class PrintGame {
         }
 
         //add the players on the board
-
+        int col = ThreadLocalRandom.current().nextInt(0, 10 + 1);
+        int li = ThreadLocalRandom.current().nextInt(0, 9 + 1);
         table[4][5] = gameMenu.player1Design;
         table[5][5] = gameMenu.player2Design;
+
+        return table;
+
+    }
+
+
+    /**
+     * Create the board with a bonus to initiate a game.
+     * @return the board game to start the game.
+     */
+    public static String[][] createBonusTable(){
+        String[][] table = new String[10][11];
+        int column;
+        int line;
+
+
+        /* Fill the game baord **/
+        for (line = 0; line < 10; line++) {
+            for (column = 0; column < 11; column++) {
+                table[line][column] = "⬛"; //fill the board with black cells
+            }
+        }
+
+        //add the players on the board
+        int col = ThreadLocalRandom.current().nextInt(0, 10 + 1);
+        int li = ThreadLocalRandom.current().nextInt(0, 9 + 1);
+        table[4][5] = gameMenu.player1Design;
+        table[5][5] = gameMenu.player2Design;
+        table[li][col] = "\uD83D\uDFE8";
 
         return table;
 

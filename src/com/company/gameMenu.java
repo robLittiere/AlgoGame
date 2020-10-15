@@ -84,7 +84,9 @@ public class gameMenu {
                 System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
                 System.out.println("| 1️⃣    'play', 'p': to begin a new game.                       |");
                 System.out.println("| 2️⃣    'rules', 'r': to see the rules, if you don't know them. |");
+                System.out.println("| 3️⃣    'bonus', 'b': to a game a new game with a secret bonuses|");
                 System.out.println("| 3️⃣    'quit', 'q': to ... what? I don't really know...        |");
+
                 System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
                 jumpLine(5);
                 chooseMenu = sc.next();
@@ -93,7 +95,8 @@ public class gameMenu {
                 switch (chooseMenu) {
                     case "q", "quit", "1" -> menu = 'q';
                     case "p", "play", "2" -> menu = 's';
-                    case "ru", "rules", "r","3" -> menu = 'r';
+                    case "b", "bonus", "3" -> menu = 'b';
+                    case "ru", "rules", "r","4" -> menu = 'r';
                     default -> printError();
                 }
             }
@@ -127,9 +130,19 @@ public class gameMenu {
             }
             case 's' -> {
                 //the init of the game
+                System.out.println(" Let's go for an explosive game");
                 player1 = nickname(1);
                 player2 = nickname(2);
                 gameBoard = PrintGame.createTable();
+                menu = 'p';
+            }
+
+            case 'b' -> {
+                //the init of the bonus game
+                System.out.println(" Let's go for a domination game, the bonus is activated, go on it's cell and see what happens \uD83D\uDFE8");
+                player1 = nickname(1);
+                player2 = nickname(2);
+                gameBoard = PrintGame.createBonusTable();
                 menu = 'p';
             }
 

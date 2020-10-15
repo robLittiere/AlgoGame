@@ -2,6 +2,12 @@ package com.company;
 
 public class WinConditions {
 
+    /**
+     *  Check if the player has lost or not
+     * @param table after update
+     * @param player To examine which player might have lost
+     * @return a boolean value to know if the player lost
+     */
     public static boolean checkIfPlayerLost(String[][] table, String player) {
         boolean matchIsWon = false;
         int positionLine = PlayerPosition.getPlayerPositionLine(table, player);
