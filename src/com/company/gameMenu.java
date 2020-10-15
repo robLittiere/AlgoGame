@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class gameMenu {
 
-    private static String[][] gameBoard = PrintGame.createTable();
+    private static String[][] gameBoard;
     public static String player1;
     public static String player2;
+    public static String player1Design = "\uD83D\uDD34";
+    public static String player2Design = "\uD83D\uDD35";
 
     /**
      * To generate a new nickname
@@ -90,7 +92,7 @@ public class gameMenu {
                 }
             }
             case 'r' -> {
-                System.out.println("\n \uD83D\uDCDCThere are the game's rules\uD83D\uDCDC\n");
+                System.out.println("\n \uD83D\uDCDC There are the game's rules \uD83D\uDCDC\n");
                 System.out.println(
                         "1. Choose a nickname to display during the game and \n show your opponent who's the strongest.\n\n" +
                         "2. First, on your turn, you can move on an adjacent cell \n, and then destroy a cell in order to try to block the opponent.\n\n" +
@@ -118,6 +120,7 @@ public class gameMenu {
             case 's' -> {
                 player1 = nickname(1);
                 player2 = nickname(2);
+                gameBoard = PrintGame.createTable();
                 menu = 'p';
             }
 
@@ -125,21 +128,33 @@ public class gameMenu {
                 System.out.println("            Congratz ");
                 System.out.println("            Congratz ");
                 System.out.println("            Congratz ");
-                menu
+                if (game.player){
+                    System.out.println("\uD83D\uDD35 "+player2+" \uD83D\uDD35 a gagné la partie !");
+                }
+                else {
+                    System.out.println("\uD83D\uDD34 "+player1+" \uD83D\uDD34 a gagné la partie !");
+                }
+                jumpLine(2);
+                System.out.println("\n Write 'back' to get back to the menu.\n" +
+                        "   'replay' to replay the game.\n" +
+                        "   and 'quit' to quit but, why ?\n");
+
+                chooseMenu = sc.next();
+                switch (chooseMenu){
+                    case "back", "b", "return", "r" -> menu = 'm';
+                    case "replay", "p", "play" -> menu = 's';
+                    case "quit", "exit", "q" -> menu = 'q';
+                    default -> printError();
+                }
             }
             case 'p' -> {
-                String player1Design = "\uD83D\uDD34";
-                String player2Design = "\uD83D\uDD35";
 
                 if (WinConditions.checkIfPlayerLost(gameBoard, player1Design) || WinConditions.checkIfPlayerLost(gameBoard, player2Design )){
                     jumpLine(4);
                     PrintGame.printBoard(gameBoard);
                     jumpLine(4);
 
-
-
-                    menu = 'm';
-
+                    menu = 'e';
                 }
 
                 else{

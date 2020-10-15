@@ -2,7 +2,7 @@ package com.company;
 
 public class game {
 
-    private static boolean player = rdmPlayer();
+    public static boolean player = rdmPlayer();
 
     /**
      * To select a player to begin at random

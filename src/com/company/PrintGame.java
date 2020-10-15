@@ -47,11 +47,9 @@ public class PrintGame {
         }
 
         //add the players on the board
-        String player1 = "\uD83D\uDD35";
-        String player2 = "\uD83D\uDD34";
 
-        table[4][5] = player1;
-        table[5][5] = player2;
+        table[4][5] = gameMenu.player1Design;
+        table[5][5] = gameMenu.player2Design;
 
         return table;
 
