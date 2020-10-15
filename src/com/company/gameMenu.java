@@ -72,6 +72,7 @@ public class gameMenu {
 
         switch (menu) {
             case 'm' -> {
+                //main menu
                 jumpLine(2);
                 System.out.println("Welcome to");
                 System.out.println("        DESTRUCT CHESS");
@@ -92,6 +93,7 @@ public class gameMenu {
                 }
             }
             case 'r' -> {
+                //the rule
                 System.out.println("\n \uD83D\uDCDC There are the game's rules \uD83D\uDCDC\n");
                 System.out.println(
                         "1. Choose a nickname to display during the game and \n show your opponent who's the strongest.\n\n" +
@@ -108,6 +110,7 @@ public class gameMenu {
                 }
             }
             case '2' ->{
+                //second page of the rule
                 System.out.println("Why are your here ??");
                 jumpLine(2);
                 System.out.println("<- Go back 'return'");
@@ -118,38 +121,17 @@ public class gameMenu {
                 }
             }
             case 's' -> {
+                //the init of the game
                 player1 = nickname(1);
                 player2 = nickname(2);
                 gameBoard = PrintGame.createTable();
                 menu = 'p';
             }
 
-            case 'e' -> {
-                System.out.println("            Congratz ");
-                System.out.println("            Congratz ");
-                System.out.println("            Congratz ");
-                if (game.player){
-                    System.out.println("\uD83D\uDD35 "+player2+" \uD83D\uDD35 a gagné la partie !");
-                }
-                else {
-                    System.out.println("\uD83D\uDD34 "+player1+" \uD83D\uDD34 a gagné la partie !");
-                }
-                jumpLine(2);
-                System.out.println("\n Write 'back' to get back to the menu.\n" +
-                        "   'replay' to replay the game.\n" +
-                        "   and 'quit' to quit but, why ?\n");
-
-                chooseMenu = sc.next();
-                switch (chooseMenu){
-                    case "back", "b", "return", "r" -> menu = 'm';
-                    case "replay", "p", "play" -> menu = 's';
-                    case "quit", "exit", "q" -> menu = 'q';
-                    default -> printError();
-                }
-            }
             case 'p' -> {
-
+                //the game
                 if (WinConditions.checkIfPlayerLost(gameBoard, player1Design) || WinConditions.checkIfPlayerLost(gameBoard, player2Design )){
+                    //detect a victory
                     jumpLine(4);
                     PrintGame.printBoard(gameBoard);
                     jumpLine(4);
@@ -158,7 +140,34 @@ public class gameMenu {
                 }
 
                 else{
+                    //if not, let's continue the game
                     game.Game(gameBoard, player1Design, player2Design);
+                }
+            }
+            case 'e' -> {
+                //the end of the game
+                System.out.println("            Congratz ");
+                System.out.println("            Congratz ");
+                System.out.println("            Congratz ");
+
+                //'player' is 'true' or 'false' depend of the turn of the player
+                if (game.player){
+                    System.out.println("\uD83D\uDD35 "+player2+" \uD83D\uDD35 a gagné la partie !");
+                }
+                else {
+                    System.out.println("\uD83D\uDD34 "+player1+" \uD83D\uDD34 a gagné la partie !");
+                }
+                jumpLine(2);
+                System.out.println("\n Write 'back' to get back to the menu.\n" +
+                                "   'replay' to replay the game.\n" +
+                                "   and 'quit' to quit but, why ?\n");
+
+                chooseMenu = sc.next();
+                switch (chooseMenu){
+                    case "back", "b", "return", "r" -> menu = 'm';
+                    case "replay", "p", "play" -> menu = 's';
+                    case "quit", "exit", "q" -> menu = 'q';
+                    default -> printError();
                 }
             }
         }
