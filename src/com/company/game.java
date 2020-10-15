@@ -2,7 +2,19 @@ package com.company;
 
 public class game {
 
-    private static boolean player = true;
+    private static boolean player = rdmPlayer();
+
+    public static boolean rdmPlayer(){
+        double rdmValue = Math.random();
+        if (rdmValue <= 0.5){
+            player = true;
+        }
+        else {
+            player = false;
+        }
+        System.out.println(player);
+        return player;
+    }
 
     /**
      * This function print the game board and make the players play their turn. Then return the game board as it is after the players turn
