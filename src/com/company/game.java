@@ -4,6 +4,11 @@ public class game {
 
     private static boolean player = rdmPlayer();
 
+    /**
+     * To select a player to begin at random
+     * rdmValue is a double which is between 0 and 1 because of the .random()
+     * @return the player to begin
+     */
     public static boolean rdmPlayer(){
         double rdmValue = Math.random();
         if (rdmValue <= 0.5){
