@@ -8,7 +8,7 @@ public class PrintGame {
      */
     public static void printBoard(String[][] table) {
 
-        /** Affichage du plateau de jeu **/
+        /** Print game board **/
         int line = 0;
         int column = 0;
 
@@ -39,7 +39,7 @@ public class PrintGame {
         int line = 0;
 
 
-        /** Remplissage du plateau de jeu **/
+        /** Fill the game baord **/
         for (line = 0; line < 10; line++) {
             for (column = 0; column < 11; column++) {
                 table[line][column] = "⬛"; //fill the board with black cells
