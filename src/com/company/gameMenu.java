@@ -13,12 +13,26 @@ public class gameMenu {
      * @param numberPlayer just to write down the number of the player that can put his username
      * @return the nickname
      */
-    public static String nickname(int numberPlayer) {   // all players can choose their nickname
+    public static String nickname(int numberPlayer) {
+        // all player can choose their nickname
+
         Scanner chooseName = new Scanner(System.in);
 
-        System.out.println("\nChoose your nickname Player "+ numberPlayer +" : ");
-        String player;
-        player = chooseName.next();
+        System.out.println("\nChoose your nickname Player "+numberPlayer+" : ");
+        String player = chooseName.next();
+        while (player.length()<2 || player.length()>10){
+            player = chooseName.next();
+
+            if (player.length() < 2) {
+                System.out.println("your nickname is too short, do another one.");
+            }
+            else if (player.length() > 10) {
+                System.out.println("your nickname is too long, do another one.");
+            }
+            else{
+                break;
+            }
+        }
         return player;
     }
 
