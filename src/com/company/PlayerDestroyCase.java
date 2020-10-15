@@ -11,18 +11,17 @@ public class PlayerDestroyCase {
      */
     public static String[][] destroyCell(String [][] table){
 
-        System.out.println("Maintenant choisit une case à détruire ");
-        System.out.println("Tu dois d'abord choisir une lettre de 'a' à 'k' qui sera la colonne ");
+        System.out.println("Now, choose a cell to destroy.");
+        System.out.println("First you choose a letter among 'a' to 'k' which represent the column");
 
         //Initiate a scanner to get user input coordinates. Here is the Y coordinate
         Scanner userinput = new Scanner(System.in);
-        String Ycoordinate = "a";
+        String Ycoordinate;
 
         //Easter egg, If you try to delete your opponent character two times you'll pass your turn//
         int tries = 1;
 
-
-        /**
+        /*
          * Initiate infinite loop in order to force the player to play his turn avoiding any different bugs
          * If user's Y coordinate is equal to one of the letter of the grid, we can get out of the loop
          */
@@ -75,7 +74,7 @@ public class PlayerDestroyCase {
         System.out.println("Now, you must choose a number between 0 and 9, the number corresponds to the line coordinate");
 
 
-        /**
+        /*
          * Initiate infinite loop in order to force the player to play his turn avoiding any different bugs
          * If user's coordinates doesn't interfere with the other player's coordinates or a destroyed case, we break the loof and finish the turn
          */

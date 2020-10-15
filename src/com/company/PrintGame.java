@@ -4,13 +4,13 @@ public class PrintGame {
 
     /**
      * Print the game board as it is at it's time.
-     * @param table
+     * @param table the table of the game
      */
     public static void printBoard(String[][] table) {
 
-        /** Print game board **/
-        int line = 0;
-        int column = 0;
+        // Print game board
+        int line;
+        int column;
 
         //Print the whole grid.
         System.out.println(" A    B    C    D    E    F   G    H    I   J    K");
@@ -35,11 +35,11 @@ public class PrintGame {
      */
     public static String[][] createTable(){
         String[][] table = new String[10][11];
-        int column = 0;
-        int line = 0;
+        int column;
+        int line;
 
 
-        /** Fill the game baord **/
+        // Fill the game board
         for (line = 0; line < 10; line++) {
             for (column = 0; column < 11; column++) {
                 table[line][column] = "⬛"; //fill the board with black cells

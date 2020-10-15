@@ -26,7 +26,7 @@ public class PlayerMove {
         System.out.println("Move to the top: 'z' ");
         System.out.println("Move to the bottom: 's' ");
 
-        /**
+        /*
          * This while loop allows the player to choose in which direction to move. He can choose to move to the top, bottom, left or right
          * If the value he enters is incorrect, he'll have to enter a new value until it is correct
          * Everytime the value gets checked to see if the movement is possible. There are three possible errors :
@@ -55,7 +55,7 @@ public class PlayerMove {
 
             }
 
-            /**
+            /*
              * The same thing repeats for every move chosen by the player
              */
             else if (choiceOfAction.equals("q")) {
