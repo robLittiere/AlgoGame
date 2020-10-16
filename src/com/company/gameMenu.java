@@ -85,7 +85,7 @@ public class gameMenu {
                 System.out.println("| 1️⃣    'play', 'p': to begin a new game.                       |");
                 System.out.println("| 2️⃣    'rules', 'r': to see the rules, if you don't know them. |");
                 System.out.println("| 3️⃣    'bonus', 'b': to a game a new game with a secret bonuses|");
-                System.out.println("| 3️⃣    'quit', 'q': to ... what? I don't really know...        |");
+                System.out.println("| 4️⃣    'quit', 'q'playat? I don't really know...               |");
 
                 System.out.println("\uD83D\uDCA5-------------------------------------------------------------\uD83D\uDCA5");
                 jumpLine(5);

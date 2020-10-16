@@ -79,9 +79,17 @@ public class PrintGame {
         //add the players on the board
         int col = ThreadLocalRandom.current().nextInt(0, 10 + 1);
         int li = ThreadLocalRandom.current().nextInt(0, 9 + 1);
-        table[4][5] = gameMenu.player1Design;
-        table[5][5] = gameMenu.player2Design;
-        table[li][col] = "\uD83D\uDFE8";
+        if ((li == 4) && (col == 5)){
+            createBonusTable();  // Used recursivitiy to not place the bonus one the player
+        }
+        else if ((li == 5) && (col == 5)){
+            createBonusTable();  //Used recursivitiy to not place the bonus one the player
+        }
+        else {
+            table[4][5] = gameMenu.player1Design;
+            table[5][5] = gameMenu.player2Design;
+            table[li][col] = "\uD83D\uDFE8";
+        }
 
         return table;
 
